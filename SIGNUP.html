@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport", content="width=device-width ,initial-scale=1.0">
+    <title>MOGERE PPE STORES</title>
+
+  </head>
+  <link rel="stylesheet" href="HOMEPAGE.CSS">
+  <body>
+    <h1 style="text-align: center;">MOGERE PPE STORES</h1>
+    <form class="Reg-form" action="#" method="post" onsubmit="return checkPassword()">
+      
+
+        <input class="hd" type="email" id="email" name="email" placeholder="Enter your email address" required>
+    
+        <input class="hd" type="tel" id="phone" name="phone" placeholder="+254712345678" required pattern="\+254\d{9}" maxlength="13">
+     <div>
+   
+      <input class="hd" type="password" id="password" name="password" placeholder="Enter your password" required>
+    </div>
+    <div>
+ 
+      <input class="hd" type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+    </div>
+     <div>
+        <p>Password should be at least 8 characters long with atleast one  special symbol, uppercase, lowercase, and numeric a character.</p>
+      </div>
+      <input type="checkbox" id="terms" name="terms" disabled>
+        <label for="myCheckbox">I agree to MOGERE PPE STORES <a href="terms.html"> Terms & Conditions</a>   and the <a href="privacy.html"> Privacy Policy</a></label> <br> <br>
+        <button class="btn" type="submit" id="submit" disabled>Submit</button>
+    </form>
+    <script>// Get the email, password, and checkbox elements
+      const emailInput = document.getElementById('email');
+      const passwordInput = document.getElementById('confirm-password');
+      const checkboxInput = document.getElementById('terms');
+      
+      // Add an event listener to the email and password inputs for changes
+      emailInput.addEventListener('input', toggleCheckbox);
+      passwordInput.addEventListener('input', toggleCheckbox);
+      
+      // Function to toggle the checkbox based on the email and password inputs
+      function toggleCheckbox() {
+        // If both inputs have values, enable the checkbox; otherwise, disable it
+        checkboxInput.disabled = (emailInput.value === '' || passwordInput.value === '');
+      }
+      </script>
+    <script>// Get the checkbox and submit button elements
+      const termsCheckbox = document.getElementById('terms');
+      const submitButton = document.getElementById('submit');
+      
+      // Add an event listener to the checkbox for changes
+      termsCheckbox.addEventListener('change', function() {
+        // If the checkbox is checked, enable the submit button; otherwise, disable it
+        submitButton.disabled = !termsCheckbox.checked;
+      });
+      </script>
+    <script>
+    
+    function checkPassword() {
+      let passwordInput = document.getElementById('password');
+      let password = passwordInput.value;
+    
+      // Password must be at least 8 characters long and contain special symbols, uppercase, lowercase, and numeric characters.
+      let passwordRegex = /^(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?])(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$/;
+    
+      if (!passwordRegex.test(password)) {
+        alert('Password must be at least 8 characters long with special symbols, uppercase, lowercase, and numeric characters.');
+        passwordInput.focus();
+        return false;
+      }
+    
+      let confirmPasswordInput = document.getElementById('confirm-password');
+      let confirmPassword = confirmPasswordInput.value;
+    
+      if (password !== confirmPassword) {
+        alert('Passwords do not match.');
+        confirmPasswordInput.focus();
+        return false;
+      }
+    
+      return true;
+    }
+</script>  
+<footer>
+  <div class="footer-columns">
+    <div class="column1">
+      <h3>Navigation</h3>
+      <ul>
+        <li ><a href="About.html">About Us</a></li>
+  
+        </ul>
+        <h3>Subscribe to our weekly Newsletter</h3>
+        <form class="sub-form">
+          
+            <input class="hd" type="email" class="form-control" name="email" placeholder="Enter your email" required>
+          
+          <button class="btn" type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+        <h3 class="h3">Follow Us on our social media platforms</h3>
+        <ul>
+          <li><a href="https://twitter.com/intent/follow?screen_name=FT">Twitter</a></li>
+          <li><a href="https://www.instagram.com/markmogere2/ ">Instagram</a></li>
+          <li><a href="https://www.linkedin.com/in/markmogere">LinkedIn</a></li>
+          </ul>     
+    </div>
+    <div class="column2">
+     <h3>Contact Us</h3>
+      <p class="ct">Call/text Us: <a href="tel:0742584191">0742584191</a></p>
+    <p class="ct">Email Us: <a href="mailto:markorori1997@gmail.com">markorori1997@gmail.com</a></p>
+    <p class="ct">Address: 87634 Aqswa Mosque, Kisauni Street, Mombasa County</p>
+    <li class="hover-me" ><a href="#">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.954117765606!2d39.68215811417444!3d-4.029782245906172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1840128314847ffd%3A0xac0d1179c3988962!2sMasjid%20Aqswa!5e0!3m2!1sen!2ske!4v1680677699284!5m2!1sen!2ske" width="100%" height="200px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </iframe></a></li>
+      
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <ul class="footer-links">
+     
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="terms.html">Terms of Use</a></li>
+      <li><a href="cookies.html">Cookie Policy</a></li>
+      <li><a href="copyright.html">Copyright Policy</a></li>
+
+    </ul>
+  </div>
+  <hr>      
+  <li class="cr">&copy; MOGERE PPE STORES. All Rights Reserved</li>
+</footer>  
+  </body>
+</html>
